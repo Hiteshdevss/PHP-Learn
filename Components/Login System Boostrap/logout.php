@@ -1,3 +1,13 @@
+<?php require './Partials/dbcon.php';
+
+session_start();
+
+  session_unset();
+  session_destroy();
+  
+  header("location: login.php");
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +18,6 @@
   </head>
   <body>
     <?php require './Partials/Navbar.php'?>
-    <?php require './Partials/dbcon.php'?>
     <h1>logout</h1>
 
     <!-- scripts -->
