@@ -8,6 +8,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = $_POST['password'];
     $c_password = $_POST['c_password'];
 
+
+
     // Check if passwords match
     if($password == $c_password){
         // Inserting details
@@ -16,6 +18,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         if ($result){
           $showAlert = true;
+          session_start();
+          $_SESSION['login'] = true;
+          $_SESSION['username'] = $username;
           header("Location: ./welcome.php");
         }
     }
